@@ -8,18 +8,6 @@ const seleccionClase = [...document.getElementsByClassName('clase')];
 
 const seleccionQuery = document.querySelector('#input.clase');
 
-//Crear elemento
-let etiquetaImagen = document.createElement('img');
-
-let divImagenes = document.getElementById('imagenes');
-divImagenes.appendChild(etiquetaImagen);
-let src = "https://www.elsoldemexico.com.mx/incoming/vgekij-perrito.jpg/ALTERNATES/LANDSCAPE_960/perrito.jpg";
-
-etiquetaImagen.src = src;
-
-let style = 'width: 50%;  filter: grayscale(100%);'
-
-etiquetaImagen.style = style
 
 //Eventos
 let miBoton = document.getElementById('boton1');
@@ -35,77 +23,74 @@ function miFuncion(event) {
 miBoton.addEventListener('click', miFuncion);
 
 
-const contactoForm = document.getElementById('contacto-form');
-const inputNombre = document.getElementById('inputNombre');
-const inputApellido = document.getElementById('inputApellido');
-const inputTelefono = document.getElementById('inputTelefono');
+const TareaForm = document.getElementById('Tarea-form');
+const inputTitulo = document.getElementById('inputTitulo');
+const inputDescp = document.getElementById('inputDescp');
+const inputHora = document.getElementById('inputHora');
 const bodyTabla = document.getElementById('body-tabla');
-const contactos = [{
-        nombre: 'Maria',
-        apellido: 'Lopez',
-        telefono: '1256432184',
+const Tareas = [{
+        Titulo: '',
+        Descripcion: '',
+        Hora: '',
     },
     {
-        nombre: 'Maria',
-        apellido: 'Lopez',
-        telefono: '9923432184',
+        Titulo: '',
+        Descripcion: '',
+        Hora: '',
     },
 ];
 
 
-function agregarContacto(nombre, apellido, telefono) {
-    contactos.push({
-        nombre,
-        apellido: apellido,
-        telefono: telefono,
+function agregarTarea(Titulo, Descripcion, Hora) {
+    Tareas.push({
+        Titulo,
+        Descripcion:Descripcion,
+        Hora: Hora,
     })
 }
 
-function eliminarContacto(indice) {
-    contactos.splice(indice, 1)
-    mostrarContactos();
+function eliminarTarea(indice) {
+    Tareas.splice(indice, 1)
+    mostrarTareas();
 
 
 }
 
-function mostrarContactos() {
+function mostrarTareas() {
     bodyTabla.innerHTML = '';
-    contactos.forEach(function(contacto, indice) {
+    Tareas.sforEach(function(Tarea, indice) {
         bodyTabla.innerHTML += `<tr>
         <th scope="row">${indice + 1}</th>
-        <td>${contacto.nombre}</td>
-        <td>${contacto.apellido}</td>
-        <td>${contacto.telefono}</td>
+        <td>${Tareas.Titulo}</td>
+        <td>${Tareas.Descripcion}</td>
+        <td>${Tareas.Hora}</td>
         <td>
-        <button class="btn btn-warning" onclick="editarContacto(${indice})">editar</button>
-        <button class="btn btn-danger" onclick="eliminarContacto(${indice})">eliminar</button>        
+        <button class="btn btn-warning" onclick="editarTarea(${indice})">editar</button>
+        <button class="btn btn-danger" onclick="eliminarTarea(${indice})">eliminar</button>        
         </td>
         </tr>`
     })
 }
 
-function editarContacto(indice) {
-    contactos[indice].nombre = prompt('Ingresa un nuevo nombre.');
-    contactos[indice].apellido = prompt('Ingresa un nuevo apellido.');
-    contactos[indice].telefono = prompt('Ingresa un nuevo telefono.');
+function editarTarea(indice) {
+    Tareas[indice].nombre = prompt('Actualiza el Título de tarea.');
+    Tareas[indice].apellido = prompt('Modifica la descripción de la Tarea');
+    Tareas[indice].telefono = prompt('Remplaza el horario');
 
-    mostrarContactos();
+    mostrarTareas();
 }
 
 
-contactoForm.addEventListener('submit', function(event) {
+TareaForm.addEventListener('submit', function(event) {
     event.preventDefault();
-    /* 
-    numero1 = numero1 + 123424123;
-    numero1 += 123424123;
-     */
-    if (inputNombre.value.trim() !== '' && inputApellido.value.trim() !== '' && inputTelefono.value.trim() !== '') {
+    
+    if (inputTitulo.value.trim() !== '' && inputDescp.value.trim() !== '' && inputHora.value.trim() !== '') {
 
         bodyTabla.innerHTML = '';
 
-        agregarContacto(inputNombre.value, inputApellido.value, inputTelefono.value);
+        agregarTarea(inputTitulo.value, inputDescp.value, inputHora.value);
 
-        mostrarContactos();
+        mostrarTareas();
 
         event.target.reset();
     } else {
@@ -113,4 +98,4 @@ contactoForm.addEventListener('submit', function(event) {
     }
 });
 
-mostrarContactos();
+mostrarTareas();

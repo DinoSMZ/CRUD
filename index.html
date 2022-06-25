@@ -5,14 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 
-<body>
-    <script src="./main.js"></script>
+
 
     <body class="bg-light">
 
@@ -20,94 +19,83 @@
             <main>
                 <div class="py-5 text-center">
                     <img class="d-block mx-auto mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-                    <h2>Checkout form</h2>
-                    <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+                    <h2>Agenda de tareas</h2>
+                
                 </div>
 
                 <div class="row g-5">
-                    <div class="col-md-5 col-lg-4 order-md-last">
-                        <h4 class="d-flex justify-content-between align-items-center mb-3">
-                            <span class="text-primary">Tu lista</span>
-                            <span class="badge bg-primary rounded-pill">3</span>
-                        </h4>
-                        <ul class="list-group mb-3">
-                            <li class="list-group-item d-flex justify-content-between lh-sm">
-                                <div>
-                                    <h6 class="my-0">Product name</h6>
-                                    <small class="text-muted">Brief description</small>
-                                </div>
-                                <span class="text-muted">$12</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between lh-sm">
-                                <div>
-                                    <h6 class="my-0">Second product</h6>
-                                    <small class="text-muted">Brief description</small>
-                                </div>
-                                <span class="text-muted">$8</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between lh-sm">
-                                <div>
-                                    <h6 class="my-0">Third item</h6>
-                                    <small class="text-muted">Brief description</small>
-                                </div>
-                                <span class="text-muted">$5</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between bg-light">
-                                <div class="text-success">
-                                    <h6 class="my-0">Promo code</h6>
-                                    <small>EXAMPLECODE</small>
-                                </div>
-                                <span class="text-success">−$5</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between">
-                                <span>Total (USD)</span>
-                                <strong>$20</strong>
-                            </li>
-                        </ul>
+                    <tbody id="body-tabla">
+                    </tbody>
 
                     </div>
                     <div class="col-md-7 col-lg-8">
-                        <h4 class="mb-3">Billing address</h4>
+                        <h4 class="mb-3">Ingresa información</h4>
                         <form class="needs-validation" novalidate="">
                             <div class="row g-3">
 
-                                <div class="col-12">
-                                    <label for="Text" class="form-label">Titulo del pendiente</label>
-                                    <input type="text" class="form-control" id="TituloPendiente" placeholder="Inserta un encabezado " required="">
+                                <form id=" Tarea-form"></form>
+                                <div class="col-12 py-3">
+                                    <label for="Text" class="form-label">Pendiente</label>
+                                    <input type="text" class="form-control" id="inputTitulo" placeholder="Inserta un Título para el pendiente " required="">
                                     <div class="invalid-feedback">
-                                        Your username is required.
+                                        Debes asignar un Título.
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="col-12">
-                                <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
-                                <input type="text" class="form-control" id="Hora" placeholder=" " required="">
+                            <div class="col-12 py-3">
+                                <label for="Text" class="form-label">Descripción<span class="text-muted"> (Opcional)</span></label>
+                                <input type="text" class="form-control" id="inputDescp" placeholder="Describe la actividad a realizar" required="">
                                 <div class="invalid-feedback">
-                                    Please enter a valid email address for shipping updates.
+                                    Es necesario describir la tarea.
                                 </div>
                             </div>
 
-                            <div class="col-12">
-                                <label for="address" class="form-label">Address</label>
-                                <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
-                                <div class="invalid-feedback">
-                                    Please enter your shipping address.
-                                </div>
-                            </div>
+                    
+                                <div class="dropdown py-3">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton inputHora " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      Hora de inicio
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                      <a class="dropdown-item" href="#">1:00 am</a>
+                                      <a class="dropdown-item" href="#">2:00 am</a>
+                                      <a class="dropdown-item" href="#">3:00 am</a>
+                                      <a class="dropdown-item" href="#">4:00 am</a>
+                                      <a class="dropdown-item" href="#">5:00 am</a>
+                                      <a class="dropdown-item" href="#">6:00 am</a>
+                                      <a class="dropdown-item" href="#">7:00 am</a>
+                                      <a class="dropdown-item" href="#">8:00 am</a>
+                                      <a class="dropdown-item" href="#">9:00 am</a>
+                                      <a class="dropdown-item" href="#">10:00 am</a>
+                                      <a class="dropdown-item" href="#">11:00 am</a>
+                                      <a class="dropdown-item" href="#">12:00 pm</a>
+                                      <a class="dropdown-item" href="#">1:00 pm</a>
+                                      <a class="dropdown-item" href="#">2:00 pm</a>
+                                      <a class="dropdown-item" href="#">3:00 pm</a>
+                                      <a class="dropdown-item" href="#">4:00 pm</a>
+                                      <a class="dropdown-item" href="#">5:00 pm</a>
+                                      <a class="dropdown-item" href="#">6:00 pm</a>
+                                      <a class="dropdown-item" href="#">7:00 pm</a>
+                                      <a class="dropdown-item" href="#">8:00 pm</a>
+                                      <a class="dropdown-item" href="#">9:00 pm</a>
+                                      <a class="dropdown-item" href="#">10:00 pm</a>
+                                      <a class="dropdown-item" href="#">11:00 pm</a>
+                                      <a class="dropdown-item" href="#">12:00 am</a>
+
+                                      
+                                    </div>
+                                  </div>
+                            
+                        </form>
 
                             <button class="btn btn-primary" type="submit">Guardar</button>
                     </div>
 
-
+                </main>
 
                     <footer class="my-5 pt-5 text-muted text-center text-small">
-                        <p class="mb-1">© 2017–2022 Company Name</p>
-                        <ul class="list-inline">
-                            <li class="list-inline-item"><a href="#">Privacy</a></li>
-                            <li class="list-inline-item"><a href="#">Terms</a></li>
-                            <li class="list-inline-item"><a href="#">Support</a></li>
-                        </ul>
+                        <p class="mb-1">Dino Sánchez</p>
+                       
                     </footer>
                 </div>
 
@@ -116,8 +104,12 @@
 
                 <script src="form-validation.js"></script>
 
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+                crossorigin="anonymous"></script>
+        
+            <script src="./main.js"></script>
 
-    </body>
 </body>
 
 </html>
