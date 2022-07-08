@@ -1,26 +1,26 @@
-const input = document.getElementById('input');
+//const input = document.getElementById('input');
 
-function imprimeValorInput() {
-    console.log(input.value);
-}
+//function imprimeValorInput() {
+//   console.log(input.value);
+//}
 
-const seleccionClase = [...document.getElementsByClassName('clase')];
+//const seleccionClase = [...document.getElementsByClassName('clase')];
 
-const seleccionQuery = document.querySelector('#input.clase');
+//const seleccionQuery = document.querySelector('#input.clase');
 
 
 //Eventos
-let miBoton = document.getElementById('boton1');
+//let miBoton = document.getElementById('boton1');
 
-function miFuncion(event) {
-    // Con innerHTML
-    divImagenes.innerHTML += `<img src ="${src}" style = "${style}" />`;
-    /* miBoton = document.getElementById('boton1');
-    miBoton.addEventListener('click', miFuncion) */
-    ;
-}
-
-miBoton.addEventListener('click', miFuncion);
+//function miFuncion(event) {
+// Con innerHTML
+//  divImagenes.innerHTML += `<img src ="${src}" style = "${style}" />`;
+/* miBoton = document.getElementById('boton1');
+miBoton.addEventListener('click', miFuncion) */
+//;
+//}
+//let miBoton = document.getElementById('buton1')
+//miBoton.addEventListener('click', miFuncion);
 
 
 const TareaForm = document.getElementById('Tarea-form');
@@ -29,36 +29,33 @@ const inputDescp = document.getElementById('inputDescp');
 const inputHora = document.getElementById('inputHora');
 const bodyTabla = document.getElementById('body-tabla');
 const Tareas = [{
-        Titulo: '',
-        Descripcion: '',
-        Hora: '',
-    },
-    {
-        Titulo: '',
-        Descripcion: '',
-        Hora: '',
-    },
-];
+    Titulo: '',
+    Descripcion: '',
+    Hora: '',
+}];
+
 
 
 function agregarTarea(Titulo, Descripcion, Hora) {
     Tareas.push({
-        Titulo,
-        Descripcion:Descripcion,
+        Titulo: Titulo,
+        Descripcion: Descripcion,
         Hora: Hora,
     })
 }
 
-function eliminarTarea(indice) {
-    Tareas.splice(indice, 1)
-    mostrarTareas();
 
+//function eliminarTarea(indice) {
+//  Tareas.splice(indice, 1)
+//mostrarTareas();
 
-}
+let miBoton = document.getElementById('buton1')
+miBoton.addEventListener('click', mostrarTareas);
+//}
 
 function mostrarTareas() {
     bodyTabla.innerHTML = '';
-    Tareas.sforEach(function(Tarea, indice) {
+    Tareas.forEach(function(Tarea, indice) {
         bodyTabla.innerHTML += `<tr>
         <th scope="row">${indice + 1}</th>
         <td>${Tareas.Titulo}</td>
@@ -73,9 +70,9 @@ function mostrarTareas() {
 }
 
 function editarTarea(indice) {
-    Tareas[indice].nombre = prompt('Actualiza el Título de tarea.');
-    Tareas[indice].apellido = prompt('Modifica la descripción de la Tarea');
-    Tareas[indice].telefono = prompt('Remplaza el horario');
+    Tareas[indice].Titulo = prompt('Actualiza el Título de tarea.');
+    Tareas[indice].Descripcion = prompt('Modifica la descripción de la Tarea');
+    Tareas[indice].Hora = prompt('Remplaza el horario');
 
     mostrarTareas();
 }
@@ -83,12 +80,12 @@ function editarTarea(indice) {
 
 TareaForm.addEventListener('submit', function(event) {
     event.preventDefault();
-    
+
     if (inputTitulo.value.trim() !== '' && inputDescp.value.trim() !== '' && inputHora.value.trim() !== '') {
 
         bodyTabla.innerHTML = '';
 
-        agregarTarea(inputTitulo.value, inputDescp.value, inputHora.value);
+        agregarTarea(Titulo.value, Descp.value, Hora.value);
 
         mostrarTareas();
 
