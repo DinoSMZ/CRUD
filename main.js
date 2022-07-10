@@ -79,7 +79,8 @@ formulariotareas.addEventListener('submit', (event) => {
         Titulo: campoTitulo.value,
         Descripcion: campodescripcion.value,
         Hora: campoHora.value,
-    });
+    })
+    
     formulariotareas.reset();
 });
 
